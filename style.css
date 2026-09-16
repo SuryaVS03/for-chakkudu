@@ -1,0 +1,636 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --background: #fff8f7;
+
+    --background2: #f7e8eb;
+
+    --card: rgba(255,255,255,.72);
+
+    --text: #3d2b30;
+
+    --muted: #94777f;
+
+    --accent: #a96d79;
+
+    --accent-light: #efd9de;
+
+    --border: #ead8dc;
+
+    --dark: #49343b;
+
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            white,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            var(--background),
+            var(--background2)
+        );
+
+    overflow-x: hidden;
+
+}
+
+
+
+/* FLOATING HEARTS */
+
+.heart {
+
+    position: fixed;
+
+    color: #bd8994;
+
+    opacity: .15;
+
+    font-family: Georgia, serif;
+
+    pointer-events: none;
+
+}
+
+
+.heart1 {
+
+    top: 10%;
+
+    left: 5%;
+
+    font-size: 40px;
+
+}
+
+
+.heart2 {
+
+    top: 30%;
+
+    right: 5%;
+
+    font-size: 30px;
+
+}
+
+
+.heart3 {
+
+    bottom: 25%;
+
+    left: 7%;
+
+    font-size: 25px;
+
+}
+
+
+.heart4 {
+
+    bottom: 10%;
+
+    right: 7%;
+
+    font-size: 45px;
+
+}
+
+
+
+/* MAIN CONTAINER */
+
+.container {
+
+    width:
+        min(
+            900px,
+            92%
+        );
+
+    margin: auto;
+
+    padding:
+        70px 0;
+
+}
+
+
+
+/* INTRO */
+
+.intro {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+
+}
+
+
+.eyebrow {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: var(--muted);
+
+    margin-bottom: 20px;
+
+}
+
+
+h1 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            9vw,
+            78px
+        );
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    margin-bottom: 20px;
+
+}
+
+
+.intro-text {
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+.little-heart {
+
+    color: var(--accent);
+
+    font-size: 25px;
+
+    margin-top: 18px;
+
+}
+
+
+
+/* SECTION */
+
+.section {
+
+    margin-bottom: 75px;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.number {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-style: italic;
+
+    color: var(--accent);
+
+    padding-top: 4px;
+
+}
+
+
+.section-heading h2 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    margin-bottom: 5px;
+
+}
+
+
+.section-heading p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+
+/* BUTTON GRID */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+
+}
+
+
+.audio-card {
+
+    min-height: 120px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 20px;
+
+    background:
+        var(--card);
+
+    padding: 20px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    color: var(--text);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+    box-shadow:
+        0 5px 20px
+        rgba(
+            80,
+            45,
+            55,
+            .04
+        );
+
+}
+
+
+.audio-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .95
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            80,
+            45,
+            55,
+            .10
+        );
+
+}
+
+
+.audio-card:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+.emoji {
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.audio-card strong {
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+}
+
+
+.audio-card small {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+
+    line-height: 1.4;
+
+}
+
+
+.full {
+
+    grid-column:
+        1 / -1;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+
+/* AUDIO PLAYER */
+
+.audio-player {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        min(
+            520px,
+            90%
+        );
+
+    background:
+        rgba(
+            65,
+            46,
+            52,
+            .97
+        );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    z-index: 100;
+
+    box-shadow:
+        0 15px 45px
+        rgba(
+            0,
+            0,
+            0,
+            .2
+        );
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+.player-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background:
+        var(--accent-light);
+
+    color:
+        var(--dark);
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.player-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+#playingTitle {
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.progress-track {
+
+    height: 4px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .2
+        );
+
+    border-radius: 10px;
+
+    margin-top: 8px;
+
+    overflow: hidden;
+
+}
+
+
+.progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        var(--accent-light);
+
+}
+
+
+.close-player {
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+footer small {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+/* MOBILE */
+
+@media (
+    max-width: 600px
+) {
+
+    .container {
+
+        padding:
+            45px 0;
+
+    }
+
+
+    .grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .full {
+
+        grid-column: auto;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .audio-card {
+
+        min-height: 105px;
+
+    }
+
+}
